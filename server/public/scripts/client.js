@@ -20,3 +20,8 @@ function getTask() {
         alert("Error retrieving to-do list from server :(");
     })
 }; // end getTask
+
+// Function to render tasks form database to table in DOM
+function render() {
+    
+} // end render
