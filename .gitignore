@@ -1,1 +1,9 @@
+# Node modules and DS
+node_modules
+.DS_store
+
+# Package json lock
+package-lock.json
+
+# Task to-do list
 TODO.md
