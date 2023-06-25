@@ -56,10 +56,24 @@ taskRouter.post('/', (req, res) => {
 
 });
 
-// // DELETE
-// taskRouter.delete('/', (req, res) => {
+// DELETE
+taskRouter.delete('/:id', (req, res) => {
+    // Dynamic targeting of the specific data id for deletion from database
+    let idToDelete = req.params.id;
 
-// });
+    let queryText = `DELETE FROM "to-do-list" WHERE id = $1;`;
+
+    pool.query(queryText, [idToDelete])
+    .then((result) => {
+        console.log("Task deleted!", result);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log(`Error sending query: ${queryText}`);
+        console.log("Error is:", error);
+        res.sendStatus(500)
+    })
+
+});
 
 
 

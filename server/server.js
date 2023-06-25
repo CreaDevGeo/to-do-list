@@ -16,7 +16,7 @@ let taskRouter = require('./routes/task.js');
 
 
 // Configurations
-app.use(express.static('public/'));
+app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Request to this url will route to taskRouter
