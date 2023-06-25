@@ -96,19 +96,22 @@ function checkboxTask() {
     // Toggle CSS text strike through and green background on click
     $(this).closest('tr').toggleClass('checkbox');
 
+    // Store the checked status in local storage
+    // Chat GPT gave me this to allow the CSS to stay on the page on refresh
+    // Using localStorage method
+    let isChecked = $(this).closest('tr').hasClass('checkbox');
+    localStorage.setItem(`task-${taskId}-checked`, isChecked);
+
     // PUT request to router
-    // $.ajax({
-    //     method: 'PUT',
-    //     url: `/task/${taskId}`
-    // }).then((response) => {
-
-    // }).catch((error) => {
-
-    // })
-    
-
-    
-
+    $.ajax({
+        method: 'PUT',
+        url: `/task/${taskId}`
+    }).then((response) => {
+        console.log("Updated task:", response)
+    }).catch((error) => {
+        console.log("Error with update request", error);
+        alert("Error updating task.");
+    })
 
 } // end checkboxTask
 
@@ -151,12 +154,32 @@ function formValidation() {
 // Function to render tasks form database to table in DOM
 function render(task) {
     // Empty table
-    $('#table-body').empty()
+    $('#table-body').empty();
 
     // Loop through to-do list data and render each property
-    for (i = 0; i < task.length; i++)
+    for (i = 0; i < task.length; i++) {
+        
+        // Conditionals
+        // Chat GPT solution for keeping CSS on refresh cause I have absolutely no clue
+        // Also seems to be using localStorage method here as well as other stuff idk about
+        // Will study this afterwards
+        let checkedStatus = localStorage.getItem(`task-${task[i].id}-checked`);
+        let isChecked;
+        if (checkedStatus === 'true') {
+            isChecked = true;
+        } else {
+            isChecked = false;
+        }
+
+        let checkboxClass = '';
+        if (isChecked) {
+            checkboxClass = 'checkbox';
+        }
+        // End conditionals
+
+        // Appending
         $('#table-body').append(`
-            <tr data-id="${task[i].id}">
+            <tr data-id="${task[i].id}" class="${checkboxClass}">
                 <td>${task[i].task}<button class="edit-button" type="button">✎</button></td>
                 <td>${task[i].priority}</td>
                 <td>${task[i].due_date}</td>
@@ -165,5 +188,6 @@ function render(task) {
                     <button class="delete-button" type="button">❌</button>
                 </td> 
             </tr>
-    `)
+        `);
+    }
 } // end render
