@@ -10,7 +10,7 @@ taskRouter.get('/', (req, res) => {
     console.log("Inside GET route '/task'");
 
     // Query to database
-    let queryText = `SELECT * FROM "to-do-list" ORDER BY "priority" AND "id" ASC;`;
+    let queryText = `SELECT * FROM "to-do-list" ORDER BY "priority" ASC;`;
 
     pool.query(queryText)
         .then((result) => {

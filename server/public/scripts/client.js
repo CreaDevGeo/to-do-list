@@ -69,9 +69,9 @@ function addTask() {
         getTask();
 
         // Clear input fields
-        $('#task-input').val();
-        $('#priority-input').val();
-        $('#due-date-input').val();
+        $('#task-input').val('');
+        $('#priority-input').val('');
+        $('#due-date-input').val('');
     }).catch((error) => {
         console.log("Error with POST request sending task", error);
         alert("Error sending task :(");
