@@ -12,19 +12,19 @@ const bodyParser = require('body-parser');
 const port = 5000;
 
 // Router: '/task'
-let taskRouter = require('./public/routes/task.js');
+let taskRouter = require('./routes/task.js');
 
 
 // Configurations
-app.use(express.static('server/public'));
+app.use(express.static('public/'));
 app.use(bodyParser.urlencoded({extended: true}));
 
-
 // Request to this url will route to taskRouter
-app.get('/task', taskRouter);
+app.use('/task', taskRouter);
+
 
 
 // Server start
 app.listen(port, () => {
-    console.log('listening on port', port);
-})
+    console.log("Up and running on port:", port);
+}); // end server start
