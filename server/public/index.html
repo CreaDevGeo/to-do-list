@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Weekend Challenge 3: To-do List App</title>
     <!-- Sourcing -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@900&display=swap" rel="stylesheet">
+    <!-- End Google Fonts -->
+    
     <link rel="shortcut icon" href="#"> <!-- To get rid of favicon error -->
     <link rel="stylesheet" href="styles/styles.css">
     <script src="./vendors/jquery-3.7.0.js"></script>
     <script src="./scripts/client.js"></script>
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <!-- End Sourcing -->
 </head>
 
@@ -21,6 +30,9 @@
             <div>
                 <!-- Icons with text here. Will each need own div of img and p -->
                 Icons and text
+                <img src = "./images/Asset 1.svg" alt="My Happy SVG"/>
+                <p>Create Tasks</p>
+
             </div>
 
             <div>
@@ -34,41 +46,34 @@
     <!-- Form input field and add task button -->
     <form>
         <fieldset>
-            <input id="task-input" type="text" placeholder="Task">    
+            <input id="task-input" type="text" placeholder="Task">
             <input id="priority-input" type="text" placeholder="Priority level; 1-3">
-            <input id="due-date-input" type="text" placeholder="Due date">    
-            <button id="add-task-button" type="button">Add Task</button>    
+            <input id="due-date-input" type="text" placeholder="Due date">
+            <button id="add-task-button" type="button">Add Task</button>
         </fieldset>
 
     </form>
 
     <!-- Table data will render to -->
-<table>
-    <!-- Headers of table -->
-    <thead>
-        <th>Task</th>
-        <th>Priority</th>
-        <th>Due Date</th>
-        <!-- This lat one will be rendered on appending of table and added task -->
-        <th>Checkbox and Delete</th>
-    </thead>
+    <table>
+        <!-- Headers of table -->
+        <thead>
+            <th>Task</th>
+            <th>Priority</th>
+            <th>Due Date</th>
+            <!-- This lat one will be rendered on appending of table and added task -->
+            <th>Checkbox</th>
+            <th>Delete</th>
+        </thead>
 
-    <!-- Body of table where all data will appear -->
-    <tbody id="table-body">
-        <!-- All table rows will have an id for identifying data id -->
-        <!-- Each table row will store individual data -->
-        <tr>
-            <!-- Dummy data -->
-            <td>Grocery Shopping<button type="button">✎</button></td> <!-- Added task and edit button for changing task properties  -->
-            <td>Priority 1</td> <!-- Priority level -->
-            <td>03/08/2024</td> <!-- End date of task -->
-            <td>
-                <button type="button">✅</button> <!-- Checkbox button -->
-                <button type="button">❌</button> <!-- Delete button -->
-            </td> 
-        </tr>
-    </tbody>
-</table>
+        <!-- Body of table where all data will appear -->
+        <tbody id="table-body">
+            <!-- All table rows will have an id for identifying data id -->
+            <!-- Each table row will store individual data -->
+            </tr>
+        </tbody>
+    </table>
 
 </body>
+
 </html>
