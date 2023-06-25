@@ -158,7 +158,7 @@ function render(task) {
 
     // Loop through to-do list data and render each property
     for (i = 0; i < task.length; i++) {
-        
+
         // Conditionals
         // Chat GPT solution for keeping CSS on refresh cause I have absolutely no clue
         // Also seems to be using localStorage method here as well as other stuff idk about
@@ -180,13 +180,15 @@ function render(task) {
         // Appending
         $('#table-body').append(`
             <tr data-id="${task[i].id}" class="${checkboxClass}">
-                <td>${task[i].task}<button class="edit-button" type="button">✎</button></td>
+                <td>${task[i].task}</td>
                 <td>${task[i].priority}</td>
                 <td>${task[i].due_date}</td>
                 <td>
                     <button class="checkbox-button" type="button">✅</button>
-                    <button class="delete-button" type="button">❌</button>
                 </td> 
+                <td>
+                    <button class="delete-button" type="button">❌</button>
+                </td>
             </tr>
         `);
     }
