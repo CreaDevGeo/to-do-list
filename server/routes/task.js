@@ -23,27 +23,23 @@ taskRouter.get('/', (req, res) => {
 
 }); // end GET
 
-// // PUT
-// taskRouter.put('/', (req, res) => {
-
-// });
 
 // // POST
 taskRouter.post('/', (req, res) => {
     // Logging
-     console.log("Inside POST '/', req.body:", req.body);
-
+    console.log("Inside POST '/', req.body:", req.body);
+    
     // task object (now req.body) sent from client reassigned as variables
     let task = req.body.task;
     let priority = req.body.priority;
     let dueDate = req.body.dueDate;
-
-
+    
+    
     // Query for database
     let queryText = 
     `INSERT INTO "to-do-list" ("task", "priority", "due_date")
     VALUES ($1, $2, $3);`;
-
+    
     // Use pool to send query
     pool.query(queryText, [task, priority, dueDate])
     .then((result) => {
@@ -51,6 +47,28 @@ taskRouter.post('/', (req, res) => {
         res.sendStatus(200);
     }).catch((error) => {
         console.log(`Error sending query: ${queryText}`, error);
+        res.sendStatus(500);
+    })
+    
+});
+
+// PUT
+taskRouter.put('/:id', (req, res) => {
+    let idToUpdate = req.params.id;
+
+    // Query to switch between completed and uncompleted
+    let queryText = 
+    `UPDATE "to-do-list"
+    SET "completed" = NOT "completed"
+    WHERE id = $1;`
+
+    // Sending out query and param
+    pool.query(queryText, [idToUpdate])
+    .then((result) => {
+        console.log("Task updated!", result);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log("Error making database query:", error);
         res.sendStatus(500);
     })
 
