@@ -1,7 +1,7 @@
 // On DOM ready run function onReady
 $(document).ready(onReady);
 
-// Function will run getTask
+// Function will run getTask and event listeners/ handlers
 function onReady() {
     getTask();
 
@@ -9,9 +9,11 @@ function onReady() {
     // Add task button
     $('#add-task-button').on('click', addTask);
 
+    // Checkbox button
+    $('#table-body').on('click', '.checkbox-button', checkboxTask);
+
     // Delete task button
     $('#table-body').on('click', '.delete-button', deleteTask);
-
 
 } // end onReady
 
@@ -48,7 +50,7 @@ function addTask() {
     // Capture values from input fields inside an object
     // Changing priority input value to integer
     let priority = $('#priority-input').val();
-    
+
     let task = {
         task: $('#task-input').val(),
         priority: parseInt($('#priority-input').val()),
@@ -80,9 +82,35 @@ function addTask() {
 
 
 /* Function to update task to completed or uncompleted (true/false) 
-in database for order by and strike text-decoration css activation.
+in database for order by, strike text-decoration and green background css activation.
 Then run getTask. */
 // PUT request
+function checkboxTask() {
+    // Logging
+    console.log("In checkboxTask", $(this));
+
+    // Selecting id of task
+    let taskId = $(this).closest('tr').data('id');
+    console.log("taskId is:", taskId);
+
+    // Toggle CSS text strike through and green background on click
+    $(this).closest('tr').toggleClass('checkbox');
+
+    // PUT request to router
+    // $.ajax({
+    //     method: 'PUT',
+    //     url: `/task/${taskId}`
+    // }).then((response) => {
+
+    // }).catch((error) => {
+
+    // })
+    
+
+    
+
+
+} // end checkboxTask
 
 
 // Function to delete task from database then run getTask 
@@ -126,7 +154,7 @@ function render(task) {
     $('#table-body').empty()
 
     // Loop through to-do list data and render each property
-    for (i = 0; i < task.length; i ++)
+    for (i = 0; i < task.length; i++)
         $('#table-body').append(`
             <tr data-id="${task[i].id}">
                 <td>${task[i].task}<button class="edit-button" type="button">✎</button></td>
