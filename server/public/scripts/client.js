@@ -9,13 +9,14 @@ function onReady() {
     // Add task button
     $('#add-task-button').on('click', addTask);
 
+    // Delete task button
+    $('#table-body').on('click', '.delete-button', deleteTask);
+
 
 } // end onReady
 
 
-
-
-
+// - FUNCTIONS/ HANDLERS -
 
 // Function to request all to-do list tasks from database and render to DOM
 // GET request
@@ -36,8 +37,6 @@ function getTask() {
         alert("Error retrieving to-do list :(");
     })
 }; // end getTask
-
-
 
 
 // Function to capture input field add a task to the to-do list database
@@ -78,6 +77,41 @@ function addTask() {
     })
 
 } // end addTask
+
+
+/* Function to update task to completed or uncompleted (true/false) 
+in database for order by and strike text-decoration css activation.
+Then run getTask. */
+// PUT request
+
+
+// Function to delete task from database then run getTask 
+function deleteTask() {
+    // Logging
+    console.log("In deleteTask:", $(this));
+
+    // Selecting id of task
+    let taskId = $(this).closest('tr').data('id');
+    console.log("taskId is:", taskId);
+
+    // Remove row delete button resides in
+    $(this).closest('tr').remove();
+
+
+    // Deleting task with ajax
+    $.ajax({
+        method: 'DELETE',
+        url: `/task/${taskId}`
+    }).then((response) => {
+        console.log("Deleted song:", response);
+        getTask();
+    }).catch((error) => {
+        console.log("Error with delete request", error);
+        alert("Error deleting task.");
+    })
+
+} //end deleteTask
+
 
 // Function for input field validation
 function formValidation() {
