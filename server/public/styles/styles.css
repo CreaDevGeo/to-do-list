@@ -1,31 +1,57 @@
 /* General Styling */
-    body {
-        background-color: #5041fa;
-        color: #fdfeec;
-        /* Animation */
-        background: linear-gradient(134deg, #5041fa, #352c9c, #292277);
-        background-size: 600% 600%;
-    
-        -webkit-animation: AnimationName 19s ease infinite;
-        -moz-animation: AnimationName 19s ease infinite;
-        animation: AnimationName 19s ease infinite;
+body {
+    background-color: #5041fa;
+    color: #fdfeec;
+    /* Animation */
+    background: linear-gradient(134deg, #5041fa, #352c9c, #292277);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 19s ease infinite;
+    -moz-animation: AnimationName 19s ease infinite;
+    animation: AnimationName 19s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 10% 0%
     }
-    
-    @-webkit-keyframes AnimationName {
-        0%{background-position:10% 0%}
-        50%{background-position:91% 100%}
-        100%{background-position:10% 0%}
+
+    50% {
+        background-position: 91% 100%
     }
-    @-moz-keyframes AnimationName {
-        0%{background-position:10% 0%}
-        50%{background-position:91% 100%}
-        100%{background-position:10% 0%}
+
+    100% {
+        background-position: 10% 0%
     }
-    @keyframes AnimationName {
-        0%{background-position:10% 0%}
-        50%{background-position:91% 100%}
-        100%{background-position:10% 0%}
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 10% 0%
     }
+
+    50% {
+        background-position: 91% 100%
+    }
+
+    100% {
+        background-position: 10% 0%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 10% 0%
+    }
+
+    50% {
+        background-position: 91% 100%
+    }
+
+    100% {
+        background-position: 10% 0%
+    }
+}
 
 
 h1 {
@@ -36,6 +62,7 @@ h1 {
     line-height: 12rem;
     text-shadow: 5px 15px black;
 }
+
 /* End General Styling */
 
 
@@ -62,6 +89,7 @@ section {
     width: 7rem;
     margin: 10px 5rem 20px;
 }
+
 /* End Icons section */
 
 /* Header and h1 */
@@ -77,9 +105,11 @@ header section div p {
     text-align: center;
     line-height: 30px;
 }
+
 .h1-color {
     color: #e5bb3d;
 }
+
 /* End Header and h1 */
 
 /* Form Styling */
@@ -100,7 +130,7 @@ fieldset {
 /* Input Field Styling */
 .inputs {
     background-color: #fdfeec;
-    width: 14rem;
+    width: 100%;
     height: 2rem;
     border: 6px solid black;
     font-family: 'Kanit', sans-serif;
@@ -150,6 +180,7 @@ fieldset {
     font-family: 'Kanit', sans-serif;
     font-size: 1.2rem;
 }
+
 /* End Form Styling */
 
 /* Table Styling */
@@ -177,6 +208,7 @@ td {
     text-align: center;
     font-size: 1.2rem;
 }
+
 /* Checkbox Button */
 .checkbox-button {
     background-color: #fdfeec;
@@ -195,6 +227,7 @@ td {
     border: 5px solid black;
     box-shadow: 1.5px 2px black;
 }
+
 /* Delete Button */
 .delete-button {
     background-color: #fdfeec;
@@ -213,4 +246,5 @@ td {
     border: 5px solid black;
     box-shadow: 1.5px 2px black;
 }
+
 /* End Table Styling */
