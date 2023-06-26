@@ -32,7 +32,7 @@ function getTask() {
         console.log("GET /tasks response:", response)
 
         // Render response to DOM
-        render(response)
+        render(response);
 
     }).catch((error) => {
         console.log("Error with GET request to server:", error);
@@ -55,7 +55,10 @@ function addTask() {
         task: $('#task-input').val(),
         priority: parseInt($('#priority-input').val()),
         dueDate: $('#due-date-input').val(),
+        completion: $('#completion-input').val()
     } // end taskInputVals
+    // Testing to see completion becasue it reads undefined 
+    console.log("task.completion is:", task.completion);
 
     // Form validation function goes here
 
@@ -73,6 +76,7 @@ function addTask() {
         $('#task-input').val('');
         $('#priority-input').val('');
         $('#due-date-input').val('');
+        $('#completion-input').val('');
     }).catch((error) => {
         console.log("Error with POST request sending task", error);
         alert("Error sending task :(");
@@ -93,21 +97,13 @@ function checkboxTask() {
     let taskId = $(this).closest('tr').data('id');
     console.log("taskId is:", taskId);
 
-    // Toggle CSS text strike through and green background on click
-    $(this).closest('tr').toggleClass('checkbox');
-
-    // Store the checked status in local storage
-    // Chat GPT gave me this to allow the CSS to stay on the page on refresh
-    // Using localStorage method
-    let isChecked = $(this).closest('tr').hasClass('checkbox');
-    localStorage.setItem(`task-${taskId}-checked`, isChecked);
-
     // PUT request to router
     $.ajax({
         method: 'PUT',
         url: `/task/${taskId}`
     }).then((response) => {
-        console.log("Updated task:", response)
+        console.log("Updated task:", response);
+        getTask();
     }).catch((error) => {
         console.log("Error with update request", error);
         alert("Error updating task.");
@@ -152,38 +148,28 @@ function formValidation() {
 
 
 // Function to render tasks form database to table in DOM
-function render(task) {
+function render(response) {
+    let newRow;
+
     // Empty table
     $('#table-body').empty();
 
     // Loop through to-do list data and render each property
-    for (i = 0; i < task.length; i++) {
+    for (i = 0; i < response.length; i++) {
+        let task = response[i];
 
-        // Conditionals
-        // Chat GPT solution for keeping CSS on refresh cause I have absolutely no clue
-        // Also seems to be using localStorage method here as well as other stuff idk about
-        // Will study this afterwards
-        let checkedStatus = localStorage.getItem(`task-${task[i].id}-checked`);
-        let isChecked;
-        if (checkedStatus === 'true') {
-            isChecked = true;
-        } else {
-            isChecked = false;
-        }
+        // Conditional
+        if (task.completion == true) {
 
-        let checkboxClass = '';
-        if (isChecked) {
-            checkboxClass = 'checkbox';
-        }
-        // End conditionals
 
-        // Appending
-        $('#table-body').append(`
-            <tr data-id="${task[i].id}" class="${checkboxClass}">
-                <td>${task[i].task}</td>
-                <td>${task[i].priority}</td>
-                <td>${task[i].due_date}</td>
+            // Rendering class if true
+            newRow = $(`
+            <tr class="completed" data-id="${response[i].id}">
+                <td>${response[i].task}</td>
+                <td>${response[i].priority}</td>
+                <td>${response[i].due_date}</td>
                 <td>
+                    ${response[i].completion}
                     <button class="checkbox-button" type="button">✅</button>
                 </td> 
                 <td>
@@ -191,5 +177,24 @@ function render(task) {
                 </td>
             </tr>
         `);
+        } else {
+            // Rendering without class if false
+            newRow = $(`
+            <tr data-id="${response[i].id}">
+                <td>${response[i].task}</td>
+                <td>${response[i].priority}</td>
+                <td>${response[i].due_date}</td>
+                <td>
+                    ${response[i].completion}
+                    <button class="checkbox-button" type="button">✅</button>
+                </td> 
+                <td>
+                    <button class="delete-button" type="button">❌</button>
+                </td>
+            </tr>
+        `);
+        }
+        $('#table-body').append(newRow);
     }
+
 } // end render

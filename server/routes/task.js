@@ -33,15 +33,16 @@ taskRouter.post('/', (req, res) => {
     let task = req.body.task;
     let priority = req.body.priority;
     let dueDate = req.body.dueDate;
+    let completion = req.body.completion;
     
     
     // Query for database
     let queryText = 
-    `INSERT INTO "to-do-list" ("task", "priority", "due_date")
-    VALUES ($1, $2, $3);`;
+    `INSERT INTO "to-do-list" ("task", "priority", "due_date", "completion")
+    VALUES ($1, $2, $3, $4);`;
     
     // Use pool to send query
-    pool.query(queryText, [task, priority, dueDate])
+    pool.query(queryText, [task, priority, dueDate, completion])
     .then((result) => {
         console.log("Great, you sent the task to the database!", result);
         res.sendStatus(200);
@@ -59,7 +60,7 @@ taskRouter.put('/:id', (req, res) => {
     // Query to switch between completed and uncompleted
     let queryText = 
     `UPDATE "to-do-list"
-    SET "completed" = NOT "completed"
+    SET "completion" = NOT "completion"
     WHERE id = $1;`
 
     // Sending out query and param
