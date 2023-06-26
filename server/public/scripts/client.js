@@ -196,5 +196,5 @@ function render(response) {
         }
         $('#table-body').append(newRow);
     }
-
+    console.log("newRow is:", newRow);
 } // end render

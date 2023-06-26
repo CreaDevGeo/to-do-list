@@ -10,12 +10,16 @@ taskRouter.get('/', (req, res) => {
     console.log("Inside GET route '/task'");
 
     // Query to database
-    let queryText = `SELECT * FROM "to-do-list" ORDER BY "priority" ASC;`;
+    let queryText = 
+    `SELECT "id", "task", "priority", "due_date", "completion", to_char("due_date", 'Mon DD, YYYY') AS "due_date"
+    FROM "to-do-list"
+    ORDER BY "priority" ASC;`;
 
     pool.query(queryText)
         .then((result) => {
             console.log("Success! Request for to-do list made!");
             res.send(result.rows);
+            console.log("result.rows is:", result.rows);
         }).catch((error) => {
             console.log(`Error making query ${queryText}`, error);
             res.sendStatus(500);
@@ -62,6 +66,9 @@ taskRouter.put('/:id', (req, res) => {
     `UPDATE "to-do-list"
     SET "completion" = NOT "completion"
     WHERE id = $1;`
+
+    // Logging the parameter to check if they are correct
+    console.log("PUT idToUpdate:", idToUpdate);
 
     // Sending out query and param
     pool.query(queryText, [idToUpdate])
