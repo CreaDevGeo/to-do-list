@@ -7,11 +7,16 @@
     <title>Weekend Challenge 3: To-do List App</title>
     <!-- Sourcing -->
     <!-- Google Fonts -->
+    <!-- Bold -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@900&display=swap" rel="stylesheet">
+    <!-- Regular -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <!-- End Google Fonts -->
-    
+
     <link rel="shortcut icon" href="#"> <!-- To get rid of favicon error -->
     <link rel="stylesheet" href="styles/styles.css">
     <script src="./vendors/jquery-3.7.0.js"></script>
@@ -24,20 +29,37 @@
 <body>
     <!-- Heading of to-do list app -->
     <header>
-        <h1>To-Do List</h1>
+        <h1>To-Do <span class="h1-color">List</span></h1>
         <!-- Icons and descriptions will be nested in section -->
         <section>
-            <div>
+            <div class="icons-and-text">
                 <!-- Icons with text here. Will each need own div of img and p -->
-                Icons and text
-                <img src = "./images/Asset 1.svg" alt="My Happy SVG"/>
+                <img src="./images/Asset 1.svg" alt="My Happy SVG" />
                 <p>Create Tasks</p>
-
+            </div>
+            <div class="icons-and-text">
+                <!-- Icons with text here. Will each need own div of img and p -->
+                <img src="./images/Asset 4.svg" alt="My Happy SVG" />
+                <p>Prioritize</p>
+            </div>
+            <div class="icons-and-text">
+                <!-- Icons with text here. Will each need own div of img and p -->
+                <img src="./images/Asset 5.svg" alt="My Happy SVG" />
+                <p>Set Due Dates</p>
+            </div>
+            <div class="icons-and-text">
+                <!-- Icons with text here. Will each need own div of img and p -->
+                <img src="./images/Asset 6.svg" alt="My Happy SVG" />
+                <p>Checkoff em' Off</p>
+            </div>
+            <div id="icons-and-text-trashcan">
+                <!-- Icons with text here. Will each need own div of img and p -->
+                <img src="./images/Asset 7.svg" alt="My Happy SVG" />
+                <p>Delete Tasks</p>
             </div>
 
             <div>
                 <!-- Description of web app her -->
-                Web app description
             </div>
 
         </section>
@@ -46,7 +68,7 @@
     <!-- Form input field and add task button -->
     <form>
         <fieldset>
-            <input id="task-input" type="text" placeholder="Task">
+            <input class="inputs" id="task-input" type="text" placeholder="Task">
             <input id="priority-input" type="text" placeholder="Priority level; 1-3">
             <input id="due-date-input" type="text" placeholder="Due date">
             <button id="add-task-button" type="button">Add Task</button>
