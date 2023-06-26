@@ -1,5 +1,9 @@
 {
     "cSpell.words": [
         "Vals"
-    ]
+    ],
+    "editor.tokenColorCustomizations": {
+        "comments": "",
+        "textMateRules": []
+    }
 }
