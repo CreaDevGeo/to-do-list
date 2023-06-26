@@ -1,18 +1,76 @@
 /* General Styling */
 body {
     background-color: #5041fa;
-    color: white;
+    color: #fdfeec;
 }
 
 h1 {
+    margin: 4rem auto;
     font-family: 'Kanit', sans-serif;
-    font-size: 5rem;
+    font-size: 14rem;
     text-align: center;
+    line-height: 12rem;
 }
 
+
+section {
+    display: flex;
+    width: 90%;
+    margin: 0 auto 3rem;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
 /* Not so General Styling */
+
+.icons-and-text {
+    width: 7rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin: 10px 5rem;
+}
+
+.h1-color {
+    color: #e5bb3d;
+}
+
+.inputs {
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+fieldset {
+    display: flex;
+    border: none;
+    gap: 2rem;
+}
+
+#icons-and-text-trashcan {
+    width: 7rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin: 10px 5rem;
+}
+
 header section div img {
     width: 7rem;
+    margin: 0px auto;
+}
+
+header section div p {
+    margin: 0px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    line-height: 30px;
 }
 
 /* Styling for checkbox click */
