@@ -69,10 +69,11 @@
     <form>
         <fieldset>
             <input class="inputs" id="task-input" type="text" placeholder="Task">
-            <input id="priority-input" type="text" placeholder="Priority level; 1-3">
-            <input id="due-date-input" type="text" placeholder="Due date">
-            <button id="add-task-button" type="button">Add Task</button>
+            <input class="inputs" id="priority-input" type="text" placeholder="Priority level; 1-3">
+            <input class="inputs" id="due-date-input" type="text" placeholder="Due date">
+            <input class="inputs" id="completion-input" type="text" placeholder="Completion; true or false">
         </fieldset>
+        <button id="add-task-button" type="button">Add Task</button>
 
     </form>
 
@@ -84,7 +85,7 @@
             <th>Priority</th>
             <th>Due Date</th>
             <!-- This lat one will be rendered on appending of table and added task -->
-            <th>Checkbox</th>
+            <th>Completed</th>
             <th>Delete</th>
         </thead>
 

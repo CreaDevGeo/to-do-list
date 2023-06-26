@@ -39,7 +39,8 @@ section {
 }
 
 .inputs {
-
+    width: 14rem;
+    height: 2rem;
 }
 
 form {
@@ -50,7 +51,7 @@ form {
 fieldset {
     display: flex;
     border: none;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 #icons-and-text-trashcan {
@@ -74,7 +75,7 @@ header section div p {
 }
 
 /* Styling for checkbox click */
-.checkbox {
+.completed {
     background-color: green;
     text-decoration: line-through;
 }
