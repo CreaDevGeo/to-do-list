@@ -3,6 +3,7 @@
 body {
     background-color: #5041fa;
     color: #fdfeec;
+    
     /* Animation */
     background: linear-gradient(356deg, #433ba0, #5041fa, #776bff);
     background-size: 600% 600%;
@@ -62,8 +63,10 @@ h1 {
     line-height: 12rem;
     text-shadow: 5px 15px black;
 }
+/* End General Styling */
 
 
+/* Icons section */
 section {
     display: flex;
     width: 90%;
@@ -75,9 +78,6 @@ section {
     align-content: center;
 }
 
-
-/* Not so General Styling */
-
 .icons-and-text {
     width: 7rem;
     margin-bottom: 20px;
@@ -85,21 +85,33 @@ section {
     margin: 10px 5rem;
 }
 
+#icons-and-text-trashcan {
+    width: 7rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin: 10px 5rem;
+}
+/* End Icons section */
+
+/* Header and h1 */
+header section div img {
+    width: 7rem;
+    margin: 0px auto;
+}
+
+header section div p {
+    margin: 0px;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    line-height: 30px;
+}
 .h1-color {
     color: #e5bb3d;
 }
+/* End Header and h1 */
 
-.inputs {
-    width: 14rem;
-    height: 2rem;
-    border: 6px solid black;
-    font-family: 'Kanit', sans-serif;
-    font-size: 1rem;
-    text-align: center;
-    box-shadow: 4px 7px black;
-    background-color: #fdfeec;
-}
-
+/* Form Styling */
 form {
     display: flex;
     justify-content: center;
@@ -114,27 +126,19 @@ fieldset {
     gap: 4rem;
 }
 
-#icons-and-text-trashcan {
-    width: 7rem;
-    margin-bottom: 20px;
-    display: inline-block;
-    margin: 10px 5rem;
-}
-
-header section div img {
-    width: 7rem;
-    margin: 0px auto;
-}
-
-header section div p {
-    margin: 0px;
-    text-align: center;
+/* Input Field Styling */
+.inputs {
+    width: 14rem;
+    height: 2rem;
+    border: 6px solid black;
     font-family: 'Kanit', sans-serif;
-    font-size: 2rem;
-    line-height: 30px;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 4px 7px black;
+    background-color: #fdfeec;
 }
 
-/* Styling for checkbox click */
+/* Styling for checkbox toggle (true/false) */
 .completed {
     background-color: #47ec9a;
     text-decoration: line-through;
@@ -142,6 +146,7 @@ header section div p {
     color: black;
 }
 
+/* Add Task Button Styling*/
 #add-task-button {
     width: 7rem;
     height: 3.5rem;
@@ -171,7 +176,9 @@ header section div p {
     box-shadow: 1.5px 2px black;
     font-family: 'Kanit', sans-serif;
 }
+/* End Form Syling */
 
+/* Table Styling */
 table {
     margin: 0 auto;
     width: 65%;
@@ -192,25 +199,7 @@ td {
     padding: 10px;
     text-align: center;
 }
-
-.delete-button {
-    background-color: #fdfeec;
-    border: 5px solid black;
-    box-shadow: 4px 4px black;
-}
-
-.delete-button:hover {
-    background-color: #fdfeec;
-    border: 5px solid black;
-    box-shadow: 2px 4px black;
-}
-
-.delete-button:active {
-    background-color: #fdfeec;
-    border: 5px solid black;
-    box-shadow: 1.5px 2px black;
-}
-
+/* Checkbox Button */
 .checkbox-button {
     background-color: #fdfeec;
     border: 5px solid black;
@@ -228,3 +217,22 @@ td {
     border: 5px solid black;
     box-shadow: 1.5px 2px black;
 }
+/* Delete Button */
+.delete-button {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 4px 4px black;
+}
+
+.delete-button:hover {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 2px 4px black;
+}
+
+.delete-button:active {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 1.5px 2px black;
+}
+/* End Table Styling */
