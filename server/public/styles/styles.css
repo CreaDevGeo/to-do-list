@@ -1,7 +1,58 @@
 /* General Styling */
+
 body {
     background-color: #5041fa;
     color: #fdfeec;
+    
+    /* Animation */
+    background: linear-gradient(356deg, #433ba0, #5041fa, #776bff);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 29s ease infinite;
+    -moz-animation: AnimationName 29s ease infinite;
+    animation: AnimationName 29s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 56% 0%
+    }
+
+    50% {
+        background-position: 45% 100%
+    }
+
+    100% {
+        background-position: 56% 0%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 56% 0%
+    }
+
+    50% {
+        background-position: 45% 100%
+    }
+
+    100% {
+        background-position: 56% 0%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 56% 0%
+    }
+
+    50% {
+        background-position: 45% 100%
+    }
+
+    100% {
+        background-position: 56% 0%
+    }
 }
 
 h1 {
@@ -10,9 +61,12 @@ h1 {
     font-size: 14rem;
     text-align: center;
     line-height: 12rem;
+    text-shadow: 5px 15px black;
 }
+/* End General Styling */
 
 
+/* Icons section */
 section {
     display: flex;
     width: 90%;
@@ -24,34 +78,11 @@ section {
     align-content: center;
 }
 
-
-/* Not so General Styling */
-
 .icons-and-text {
     width: 7rem;
     margin-bottom: 20px;
     display: inline-block;
     margin: 10px 5rem;
-}
-
-.h1-color {
-    color: #e5bb3d;
-}
-
-.inputs {
-    width: 14rem;
-    height: 2rem;
-}
-
-form {
-    display: flex;
-    justify-content: center;
-}
-
-fieldset {
-    display: flex;
-    border: none;
-    gap: 4rem;
 }
 
 #icons-and-text-trashcan {
@@ -60,7 +91,9 @@ fieldset {
     display: inline-block;
     margin: 10px 5rem;
 }
+/* End Icons section */
 
+/* Header and h1 */
 header section div img {
     width: 7rem;
     margin: 0px auto;
@@ -73,9 +106,133 @@ header section div p {
     font-size: 2rem;
     line-height: 30px;
 }
-
-/* Styling for checkbox click */
-.completed {
-    background-color: green;
-    text-decoration: line-through;
+.h1-color {
+    color: #e5bb3d;
 }
+/* End Header and h1 */
+
+/* Form Styling */
+form {
+    display: flex;
+    justify-content: center;
+    width: 69%;
+    margin: 8px auto;
+    flex-wrap: wrap;
+}
+
+fieldset {
+    display: flex;
+    border: none;
+    gap: 4rem;
+}
+
+/* Input Field Styling */
+.inputs {
+    width: 14rem;
+    height: 2rem;
+    border: 6px solid black;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 4px 7px black;
+    background-color: #fdfeec;
+}
+
+/* Styling for checkbox toggle (true/false) */
+.completed {
+    background-color: #47ec9a;
+    text-decoration: line-through;
+    padding: 20px;
+    color: black;
+}
+
+/* Add Task Button Styling*/
+#add-task-button {
+    width: 7rem;
+    height: 3.5rem;
+    background-color: #47ec9a;
+    margin: 31px;
+    border: 5px solid black;
+    box-shadow: 4px 7px black;
+    font-family: 'Kanit', sans-serif;
+}
+
+#add-task-button:hover {
+    width: 7rem;
+    height: 3.5rem;
+    background-color: #47ec9a;
+    margin: 31px;
+    border: 5px solid black;
+    box-shadow: 2px 4px black;
+    font-family: 'Kanit', sans-serif;
+}
+
+#add-task-button:active {
+    width: 7rem;
+    height: 3.5rem;
+    background-color: #47ec9a;
+    margin: 31px;
+    border: 5px solid black;
+    box-shadow: 1.5px 2px black;
+    font-family: 'Kanit', sans-serif;
+}
+/* End Form Syling */
+
+/* Table Styling */
+table {
+    margin: 0 auto;
+    width: 65%;
+    color: #fdfeec;
+    padding: 0 13px 12px;
+    border: 6px solid black;
+    background-color: #4436ec;
+    border-radius: 10px;
+    box-shadow: 10px 22px 40px black;
+}
+
+th {
+    background-color: black;
+    border-radius: 5px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+/* Checkbox Button */
+.checkbox-button {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 4px 4px black;
+}
+
+.checkbox-button:hover {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 2px 4px black;
+}
+
+.checkbox-button:active {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 1.5px 2px black;
+}
+/* Delete Button */
+.delete-button {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 4px 4px black;
+}
+
+.delete-button:hover {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 2px 4px black;
+}
+
+.delete-button:active {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 1.5px 2px black;
+}
+/* End Table Styling */
