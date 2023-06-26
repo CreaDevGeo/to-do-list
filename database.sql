@@ -1,3 +1,5 @@
+-- Database name: weekend-to-do-app
+
 CREATE TABLE "to-do-list" (
   "id" SERIAL PRIMARY KEY,
   "task" VARCHAR(80) NOT NULL,
