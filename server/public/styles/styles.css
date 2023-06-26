@@ -1,7 +1,57 @@
 /* General Styling */
+
 body {
     background-color: #5041fa;
     color: #fdfeec;
+    /* Animation */
+    background: linear-gradient(356deg, #433ba0, #5041fa, #776bff);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 29s ease infinite;
+    -moz-animation: AnimationName 29s ease infinite;
+    animation: AnimationName 29s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 56% 0%
+    }
+
+    50% {
+        background-position: 45% 100%
+    }
+
+    100% {
+        background-position: 56% 0%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 56% 0%
+    }
+
+    50% {
+        background-position: 45% 100%
+    }
+
+    100% {
+        background-position: 56% 0%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 56% 0%
+    }
+
+    50% {
+        background-position: 45% 100%
+    }
+
+    100% {
+        background-position: 56% 0%
+    }
 }
 
 h1 {
@@ -10,6 +60,7 @@ h1 {
     font-size: 14rem;
     text-align: center;
     line-height: 12rem;
+    text-shadow: 5px 15px black;
 }
 
 
@@ -41,11 +92,20 @@ section {
 .inputs {
     width: 14rem;
     height: 2rem;
+    border: 6px solid black;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 4px 7px black;
+    background-color: #fdfeec;
 }
 
 form {
     display: flex;
     justify-content: center;
+    width: 69%;
+    margin: 8px auto;
+    flex-wrap: wrap;
 }
 
 fieldset {
@@ -76,6 +136,95 @@ header section div p {
 
 /* Styling for checkbox click */
 .completed {
-    background-color: green;
+    background-color: #47ec9a;
     text-decoration: line-through;
+    padding: 20px;
+    color: black;
+}
+
+#add-task-button {
+    width: 7rem;
+    height: 3.5rem;
+    background-color: #47ec9a;
+    margin: 31px;
+    border: 5px solid black;
+    box-shadow: 4px 7px black;
+    font-family: 'Kanit', sans-serif;
+}
+
+#add-task-button:hover {
+    width: 7rem;
+    height: 3.5rem;
+    background-color: #47ec9a;
+    margin: 31px;
+    border: 5px solid black;
+    box-shadow: 2px 4px black;
+    font-family: 'Kanit', sans-serif;
+}
+
+#add-task-button:active {
+    width: 7rem;
+    height: 3.5rem;
+    background-color: #47ec9a;
+    margin: 31px;
+    border: 5px solid black;
+    box-shadow: 1.5px 2px black;
+    font-family: 'Kanit', sans-serif;
+}
+
+table {
+    margin: 0 auto;
+    width: 65%;
+    color: #fdfeec;
+    padding: 0 13px 12px;
+    border: 6px solid black;
+    background-color: #4436ec;
+    border-radius: 10px;
+    box-shadow: 10px 22px 40px black;
+}
+
+th {
+    background-color: black;
+    border-radius: 5px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+.delete-button {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 4px 4px black;
+}
+
+.delete-button:hover {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 2px 4px black;
+}
+
+.delete-button:active {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 1.5px 2px black;
+}
+
+.checkbox-button {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 4px 4px black;
+}
+
+.checkbox-button:hover {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 2px 4px black;
+}
+
+.checkbox-button:active {
+    background-color: #fdfeec;
+    border: 5px solid black;
+    box-shadow: 1.5px 2px black;
 }
