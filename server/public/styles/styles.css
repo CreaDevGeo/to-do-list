@@ -1,59 +1,32 @@
 /* General Styling */
-
-body {
-    background-color: #5041fa;
-    color: #fdfeec;
+    body {
+        background-color: #5041fa;
+        color: #fdfeec;
+        /* Animation */
+        background: linear-gradient(134deg, #5041fa, #352c9c, #292277);
+        background-size: 600% 600%;
     
-    /* Animation */
-    background: linear-gradient(356deg, #433ba0, #5041fa, #776bff);
-    background-size: 600% 600%;
-
-    -webkit-animation: AnimationName 29s ease infinite;
-    -moz-animation: AnimationName 29s ease infinite;
-    animation: AnimationName 29s ease infinite;
-}
-
-@-webkit-keyframes AnimationName {
-    0% {
-        background-position: 56% 0%
+        -webkit-animation: AnimationName 19s ease infinite;
+        -moz-animation: AnimationName 19s ease infinite;
+        animation: AnimationName 19s ease infinite;
+    }
+    
+    @-webkit-keyframes AnimationName {
+        0%{background-position:10% 0%}
+        50%{background-position:91% 100%}
+        100%{background-position:10% 0%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:10% 0%}
+        50%{background-position:91% 100%}
+        100%{background-position:10% 0%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:10% 0%}
+        50%{background-position:91% 100%}
+        100%{background-position:10% 0%}
     }
 
-    50% {
-        background-position: 45% 100%
-    }
-
-    100% {
-        background-position: 56% 0%
-    }
-}
-
-@-moz-keyframes AnimationName {
-    0% {
-        background-position: 56% 0%
-    }
-
-    50% {
-        background-position: 45% 100%
-    }
-
-    100% {
-        background-position: 56% 0%
-    }
-}
-
-@keyframes AnimationName {
-    0% {
-        background-position: 56% 0%
-    }
-
-    50% {
-        background-position: 45% 100%
-    }
-
-    100% {
-        background-position: 56% 0%
-    }
-}
 
 h1 {
     margin: 4rem auto;
@@ -79,17 +52,15 @@ section {
 }
 
 .icons-and-text {
-    width: 7rem;
-    margin-bottom: 20px;
     display: inline-block;
-    margin: 10px 5rem;
+    width: 7rem;
+    margin: 10px 5rem 20px;
 }
 
 #icons-and-text-trashcan {
-    width: 7rem;
-    margin-bottom: 20px;
     display: inline-block;
-    margin: 10px 5rem;
+    width: 7rem;
+    margin: 10px 5rem 20px;
 }
 /* End Icons section */
 
@@ -101,9 +72,9 @@ header section div img {
 
 header section div p {
     margin: 0px;
-    text-align: center;
     font-family: 'Kanit', sans-serif;
     font-size: 2rem;
+    text-align: center;
     line-height: 30px;
 }
 .h1-color {
@@ -114,10 +85,10 @@ header section div p {
 /* Form Styling */
 form {
     display: flex;
-    justify-content: center;
     width: 69%;
     margin: 8px auto;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 fieldset {
@@ -128,76 +99,83 @@ fieldset {
 
 /* Input Field Styling */
 .inputs {
+    background-color: #fdfeec;
     width: 14rem;
     height: 2rem;
     border: 6px solid black;
     font-family: 'Kanit', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
     box-shadow: 4px 7px black;
-    background-color: #fdfeec;
 }
 
 /* Styling for checkbox toggle (true/false) */
 .completed {
     background-color: #47ec9a;
+    color: black;
     text-decoration: line-through;
     padding: 20px;
-    color: black;
 }
 
 /* Add Task Button Styling*/
 #add-task-button {
+    background-color: #47ec9a;
     width: 7rem;
     height: 3.5rem;
-    background-color: #47ec9a;
     margin: 31px;
     border: 5px solid black;
     box-shadow: 4px 7px black;
     font-family: 'Kanit', sans-serif;
+    font-size: 1.2rem;
 }
 
 #add-task-button:hover {
+    background-color: #47ec9a;
     width: 7rem;
     height: 3.5rem;
-    background-color: #47ec9a;
     margin: 31px;
     border: 5px solid black;
     box-shadow: 2px 4px black;
     font-family: 'Kanit', sans-serif;
+    font-size: 1.2rem;
 }
 
 #add-task-button:active {
+    background-color: #47ec9a;
     width: 7rem;
     height: 3.5rem;
-    background-color: #47ec9a;
     margin: 31px;
     border: 5px solid black;
     box-shadow: 1.5px 2px black;
     font-family: 'Kanit', sans-serif;
+    font-size: 1.2rem;
 }
-/* End Form Syling */
+/* End Form Styling */
 
 /* Table Styling */
 table {
-    margin: 0 auto;
-    width: 65%;
+    background-color: #4436ec;
     color: #fdfeec;
+    width: 65%;
+    margin: 0 auto;
     padding: 0 13px 12px;
     border: 6px solid black;
-    background-color: #4436ec;
     border-radius: 10px;
     box-shadow: 10px 22px 40px black;
+    font-family: 'Kanit', sans-serif;
 }
 
 th {
     background-color: black;
     border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 10px 23px;
 }
 
 td {
     padding: 10px;
     text-align: center;
+    font-size: 1.2rem;
 }
 /* Checkbox Button */
 .checkbox-button {
