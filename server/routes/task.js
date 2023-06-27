@@ -96,7 +96,7 @@ taskRouter.delete('/:id', (req, res) => {
     }).catch((error) => {
         console.log(`Error sending query: ${queryText}`);
         console.log("Error is:", error);
-        res.sendStatus(500)
+        res.sendStatus(500);
     })
 
 });
