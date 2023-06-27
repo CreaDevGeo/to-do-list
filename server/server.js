@@ -1,4 +1,4 @@
-// Imports and Routers
+// ImPORTs and Routers
 // Express
 const express = require('express');
 
@@ -8,7 +8,7 @@ const app = express();
 // Body parser
 const bodyParser = require('body-parser');
 
-// Port
+// PORT
 const PORT = process.env.PORT || 5000;
 
 // Router: '/task'
@@ -25,6 +25,6 @@ app.use('/task', taskRouter);
 
 
 // Server start
-app.listen(port, () => {
-    console.log("Up and running on port:", port);
+app.listen(PORT, () => {
+    console.log("Up and running on PORT:", PORT);
 }); // end server start
